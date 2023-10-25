@@ -8,7 +8,7 @@ import java.io.*;
  * Чтение, запись результатов сканирования в файл
  */
 public class ReadWriteFile {
-    File file = new File("dbScanDomainName");
+    File file = new File("dbScanDomainName.txt");
     Logger log = LoggerFactory.getLogger(ReadWriteFile.class);
 
     public void writeInFile(String str) {
