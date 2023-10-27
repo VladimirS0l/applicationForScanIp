@@ -4,8 +4,13 @@ import inet.ipaddr.IPAddress;
 import inet.ipaddr.IPAddressString;
 import org.apache.http.HttpResponseInterceptor;
 import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.conn.ManagedHttpClientConnection;
+import org.apache.http.conn.ssl.NoopHostnameVerifier;
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+import org.apache.http.conn.ssl.TrustSelfSignedStrategy;
+import org.apache.http.conn.ssl.TrustStrategy;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.protocol.BasicHttpContext;
@@ -13,8 +18,12 @@ import org.apache.http.protocol.HttpContext;
 import org.apache.http.protocol.HttpCoreContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSession;
 import java.io.IOException;
+import java.security.KeyManagementException;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
 import java.security.cert.Certificate;
 import java.security.cert.X509Certificate;
 import java.util.concurrent.ExecutorService;
@@ -38,7 +47,7 @@ public class SSLCertificateScanner {
                 try {
                     String sc = scanIp("https://" + addr);
                     rwf.writeInFile(sc);
-                } catch (IOException e) {
+                } catch (IOException | KeyStoreException | KeyManagementException | NoSuchAlgorithmException e) {
                     log.error(e.getMessage());
                 }
             };
@@ -47,7 +56,7 @@ public class SSLCertificateScanner {
         executorService.shutdown();
     }
 
-    public String scanIp(String ip) throws IOException {
+    public String scanIp(String ip) throws IOException, NoSuchAlgorithmException, KeyStoreException, KeyManagementException {
         StringBuilder sb = new StringBuilder();
         HttpResponseInterceptor certificateInterceptor = (httpResponse, context) -> {
             ManagedHttpClientConnection routedConnection = (ManagedHttpClientConnection) context
@@ -59,8 +68,20 @@ public class SSLCertificateScanner {
             }
         };
 
-        CloseableHttpClient httpClient = HttpClients
-                .custom()
+        TrustStrategy acceptingTrustStrategy = new TrustSelfSignedStrategy();
+
+        SSLContext sslContext = org.apache.http.ssl.SSLContexts.custom().loadTrustMaterial(null, acceptingTrustStrategy)
+                .build();
+
+        SSLConnectionSocketFactory csf = new SSLConnectionSocketFactory(sslContext, NoopHostnameVerifier.INSTANCE);
+
+        RequestConfig requestConfig = RequestConfig.custom()
+                .setConnectTimeout(1000)
+                .build();
+
+        CloseableHttpClient httpClient = HttpClients.custom()
+                .setDefaultRequestConfig(requestConfig)
+                .setSSLSocketFactory(csf)
                 .addInterceptorLast(certificateInterceptor)
                 .build();
 

@@ -1,5 +1,37 @@
 
-https://8.8.8.8---------------------------------------------------------
-https://8.8.8.8: domain name - CN=dns.google
-https://8.8.8.8: domain name - CN=GTS CA 1C3, O=Google Trust Services LLC, C=US
-https://8.8.8.8: domain name - CN=GTS Root R1, O=Google Trust Services LLC, C=US
+
+https://149.154.167.32---------------------------------------------------------
+https://149.154.167.32: domain name - CN=*.contestugc.com
+https://149.154.167.32: domain name - CN=Go Daddy Secure Certificate Authority - G2, OU=http://certs.godaddy.com/repository/, O="GoDaddy.com, Inc.", L=Scottsdale, ST=Arizona, C=US
+https://149.154.167.32: domain name - CN=Go Daddy Root Certificate Authority - G2, O="GoDaddy.com, Inc.", L=Scottsdale, ST=Arizona, C=US
+https://149.154.167.32: domain name - OU=Go Daddy Class 2 Certification Authority, O="The Go Daddy Group, Inc.", C=US
+
+https://149.154.167.80---------------------------------------------------------
+https://149.154.167.80: domain name - CN=updates.tdesktop.com
+https://149.154.167.80: domain name - CN=Go Daddy Secure Certificate Authority - G2, OU=http://certs.godaddy.com/repository/, O="GoDaddy.com, Inc.", L=Scottsdale, ST=Arizona, C=US
+https://149.154.167.80: domain name - CN=Go Daddy Root Certificate Authority - G2, O="GoDaddy.com, Inc.", L=Scottsdale, ST=Arizona, C=US
+https://149.154.167.80: domain name - OU=Go Daddy Class 2 Certification Authority, O="The Go Daddy Group, Inc.", C=US
+
+https://149.154.167.99---------------------------------------------------------
+https://149.154.167.99: domain name - CN=*.telegram.org
+https://149.154.167.99: domain name - CN=Go Daddy Secure Certificate Authority - G2, OU=http://certs.godaddy.com/repository/, O="GoDaddy.com, Inc.", L=Scottsdale, ST=Arizona, C=US
+https://149.154.167.99: domain name - CN=Go Daddy Root Certificate Authority - G2, O="GoDaddy.com, Inc.", L=Scottsdale, ST=Arizona, C=US
+https://149.154.167.99: domain name - OU=Go Daddy Class 2 Certification Authority, O="The Go Daddy Group, Inc.", C=US
+
+https://149.154.167.132---------------------------------------------------------
+https://149.154.167.132: domain name - CN=*.contestugc.com
+https://149.154.167.132: domain name - CN=Go Daddy Secure Certificate Authority - G2, OU=http://certs.godaddy.com/repository/, O="GoDaddy.com, Inc.", L=Scottsdale, ST=Arizona, C=US
+https://149.154.167.132: domain name - CN=Go Daddy Root Certificate Authority - G2, O="GoDaddy.com, Inc.", L=Scottsdale, ST=Arizona, C=US
+https://149.154.167.132: domain name - OU=Go Daddy Class 2 Certification Authority, O="The Go Daddy Group, Inc.", C=US
+
+https://149.154.167.220---------------------------------------------------------
+https://149.154.167.220: domain name - CN=*.telegram.org
+https://149.154.167.220: domain name - CN=Go Daddy Secure Certificate Authority - G2, OU=http://certs.godaddy.com/repository/, O="GoDaddy.com, Inc.", L=Scottsdale, ST=Arizona, C=US
+https://149.154.167.220: domain name - CN=Go Daddy Root Certificate Authority - G2, O="GoDaddy.com, Inc.", L=Scottsdale, ST=Arizona, C=US
+https://149.154.167.220: domain name - OU=Go Daddy Class 2 Certification Authority, O="The Go Daddy Group, Inc.", C=US
+
+https://149.154.167.217---------------------------------------------------------
+https://149.154.167.217: domain name - CN=*.telegram.org
+https://149.154.167.217: domain name - CN=Go Daddy Secure Certificate Authority - G2, OU=http://certs.godaddy.com/repository/, O="GoDaddy.com, Inc.", L=Scottsdale, ST=Arizona, C=US
+https://149.154.167.217: domain name - CN=Go Daddy Root Certificate Authority - G2, O="GoDaddy.com, Inc.", L=Scottsdale, ST=Arizona, C=US
+https://149.154.167.217: domain name - OU=Go Daddy Class 2 Certification Authority, O="The Go Daddy Group, Inc.", C=US
